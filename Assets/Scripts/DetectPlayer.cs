@@ -25,9 +25,9 @@ public class DetectPlayer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        player potentialPlayer = collision.gameObject.GetComponent<player>();
-        if (potentialPlayer == null)
-            return;
+        //player potentialPlayer = collision.gameObject.GetComponent<player>();
+        //if (potentialPlayer == null)
+          //  return;
         GameObject.Find(kbIconInfo.name).GetComponent<SpriteRenderer>().enabled = true;
         JoueurEstProche = true;
     }
