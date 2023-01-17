@@ -241,6 +241,8 @@ MonoBehaviour:
   JoueurEstProche: 0
   kbIconInfo: {fileID: 1549489164}
   objet: {fileID: 1229146663}
+  scotchok: 0
+  affichescotch: 0
 --- !u!58 &458932430
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -557,6 +559,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JoueurEstProche: 0
   kbIconInfo: {fileID: 1874671852}
+  scotchestla: 0
+  scotchaffiche: 0
 --- !u!212 &793156176
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -617,7 +621,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 793156173}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.87135, y: 2.0388627, z: 0}
+  m_LocalPosition: {x: 10.29, y: 1.77, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
