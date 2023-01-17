@@ -19,7 +19,7 @@ public class DetectPlayer : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && JoueurEstProche)
         {
-
+			
         }
     }
 
