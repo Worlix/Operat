@@ -10,6 +10,7 @@ public class DetectPlayer : MonoBehaviour
 	public bool scotchok;
 	public int affichescotch;
 
+
 	// Start is called before the first frame update
 	void Start()
     {
