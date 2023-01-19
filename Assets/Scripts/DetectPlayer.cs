@@ -24,7 +24,10 @@ public class DetectPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		affichescotch = GameObject.Find("trou").GetComponent<troumur>().scotchaffiche;
+        if (GameObject.Find("trou") != null){
+            affichescotch = GameObject.Find("trou").GetComponent<troumur>().scotchaffiche;
+        }
+		
 
 		if (Input.GetKeyDown(KeyCode.E) && JoueurEstProche)
         {
@@ -35,10 +38,9 @@ public class DetectPlayer : MonoBehaviour
 		if (affichescotch==1){
 			GameObject.Find(objet.name).GetComponent<SpriteRenderer>().enabled = false;
 			affichescotch = 0;
+            Destroy(GameObject.Find("trou"));
 		}
-
-		print(affichescotch);
-
+        print(affichescotch);
 
     }
 

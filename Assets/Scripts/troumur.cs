@@ -23,9 +23,7 @@ public class troumur : MonoBehaviour
 		scotchestla = GameObject.Find("Triangle").GetComponent<DetectPlayer>().scotchok;
 		if (Input.GetKeyDown(KeyCode.E) && JoueurEstProche && scotchestla)
 		{
-			
 			scotchaffiche = 1;
-			Destroy(this.gameObject);
 		}
 
 	}
