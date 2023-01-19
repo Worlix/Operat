@@ -38,7 +38,6 @@ public class DetectPlayer : MonoBehaviour
 		if (affichescotch==1){
 			GameObject.Find(objet.name).GetComponent<SpriteRenderer>().enabled = false;
 			affichescotch = 0;
-            Destroy(GameObject.Find("trou"));
 		}
         print(affichescotch);
 
