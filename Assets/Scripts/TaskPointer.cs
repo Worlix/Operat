@@ -8,14 +8,16 @@ public class TaskPointer : MonoBehaviour
     private Vector3 targetPosition;
     private RectTransform pointerRect;
     public GameObject target;
-    public GameObject myPointer;
-    [SerializeField] private Camera uiCamera;
-    public float borderSize = 1f;
+    private GameObject myPointer;
+    private Camera uiCamera;
+    private float borderSize = 150f;
 
     private void Awake()
     {
-        pointerRect = transform.Find("Pointer").GetComponent<RectTransform>();
+        myPointer = transform.Find("Pointer").gameObject;
+        pointerRect = myPointer.GetComponent<RectTransform>();
         targetPosition = target.transform.position;
+        uiCamera = Camera.main;
     }
 
     // Update is called once per frame
@@ -35,10 +37,12 @@ public class TaskPointer : MonoBehaviour
         {
             myPointer.SetActive(true);
             Vector3 cappedTargetScreenPosition = targetPositionScreenPoint;
-            if (cappedTargetScreenPosition.x <= borderSize) cappedTargetScreenPosition.x = borderSize;
-            if (cappedTargetScreenPosition.x >= Screen.width - borderSize) cappedTargetScreenPosition.x = Screen.width - borderSize;
-            if (cappedTargetScreenPosition.y <= borderSize) cappedTargetScreenPosition.y = borderSize;
-            if (cappedTargetScreenPosition.y >= Screen.height - borderSize) cappedTargetScreenPosition.y = Screen.height - borderSize;
+            cappedTargetScreenPosition.x = Mathf.Clamp(cappedTargetScreenPosition.x, borderSize, Screen.width - borderSize);
+            cappedTargetScreenPosition.y = Mathf.Clamp(cappedTargetScreenPosition.y, borderSize, Screen.height - borderSize);
+            //if (cappedTargetScreenPosition.x <= borderSize) cappedTargetScreenPosition.x = borderSize;
+            //if (cappedTargetScreenPosition.x >= Screen.width - borderSize) cappedTargetScreenPosition.x = Screen.width - borderSize;
+            //if (cappedTargetScreenPosition.y <= borderSize) cappedTargetScreenPosition.y = borderSize;
+            //if (cappedTargetScreenPosition.y >= Screen.height - borderSize) cappedTargetScreenPosition.y = Screen.height - borderSize;
 
             Vector3 pointerWorldPosition = uiCamera.ScreenToWorldPoint(cappedTargetScreenPosition);
             pointerRect.position = pointerWorldPosition;
