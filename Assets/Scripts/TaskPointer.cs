@@ -8,6 +8,7 @@ public class TaskPointer : MonoBehaviour
     private Vector3 targetPosition;
     private RectTransform pointerRect;
     public GameObject target;
+    public GameObject myPointer;
     [SerializeField] private Camera uiCamera;
     public float borderSize = 1f;
 
@@ -32,6 +33,7 @@ public class TaskPointer : MonoBehaviour
 
         if (isOffScreen)
         {
+            myPointer.SetActive(true);
             Vector3 cappedTargetScreenPosition = targetPositionScreenPoint;
             if (cappedTargetScreenPosition.x <= borderSize) cappedTargetScreenPosition.x = borderSize;
             if (cappedTargetScreenPosition.x >= Screen.width - borderSize) cappedTargetScreenPosition.x = Screen.width - borderSize;
@@ -44,6 +46,8 @@ public class TaskPointer : MonoBehaviour
         }
         else
         {
+            myPointer.SetActive(false);
+
             Vector3 pointerWorldPosition = uiCamera.ScreenToWorldPoint(targetPositionScreenPoint);
             pointerRect.position = pointerWorldPosition;
             pointerRect.localPosition = new Vector3(pointerRect.localPosition.x, pointerRect.localPosition.y, 0f);
