@@ -20,7 +20,7 @@ public class troumur : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		scotchestla = GameObject.Find("Triangle").GetComponent<DetectPlayer>().scotchok;
+		scotchestla = GameObject.Find("groupescotch").GetComponent<DetectPlayer>().scotchok;
 		if (Input.GetKeyDown(KeyCode.E) && JoueurEstProche && scotchestla)
 		{
 			scotchaffiche = 1;
