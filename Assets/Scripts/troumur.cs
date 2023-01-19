@@ -24,6 +24,7 @@ public class troumur : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.E) && JoueurEstProche && scotchestla)
 		{
 			scotchaffiche = 1;
+			Destroy(this.gameObject, 3);
 		}
 
 	}
