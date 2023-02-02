@@ -5,14 +5,14 @@ using UnityEngine;
 public class troumur : MonoBehaviour
 {
 	public bool JoueurEstProche;
-	public GameObject kbIconInfo;
+	public GameObject kbIconInfo7;
 	public bool scotchestla;
 	public int scotchaffiche;
 
 	// Start is called before the first frame update
 	void Start()
     {
-		GameObject.Find(kbIconInfo.name).GetComponent<SpriteRenderer>().enabled = false;
+		GameObject.Find(kbIconInfo7.name).GetComponent<SpriteRenderer>().enabled = false;
 		GameObject.Find("noscotch").GetComponent<SpriteRenderer>().enabled = false;
 		JoueurEstProche = false;
 		scotchaffiche = 0;
@@ -38,13 +38,13 @@ public class troumur : MonoBehaviour
 		//player potentialPlayer = collision.gameObject.GetComponent<player>();
 		//if (potentialPlayer == null)
 		//  return;
-		GameObject.Find(kbIconInfo.name).GetComponent<SpriteRenderer>().enabled = true;
+		GameObject.Find(kbIconInfo7.name).GetComponent<SpriteRenderer>().enabled = true;
 		JoueurEstProche = true;
 	}
 
 	private void OnTriggerExit2D(Collider2D collision)
 	{
-		GameObject.Find(kbIconInfo.name).GetComponent<SpriteRenderer>().enabled = false;
+		GameObject.Find(kbIconInfo7.name).GetComponent<SpriteRenderer>().enabled = false;
 		JoueurEstProche = false;
 	}
 }

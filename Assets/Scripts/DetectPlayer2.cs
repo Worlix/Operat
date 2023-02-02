@@ -5,12 +5,12 @@ using UnityEngine;
 public class DetectPlayer2 : MonoBehaviour
 {
     public bool JoueurEstProche;
-	public GameObject kbIconInfo;
+	public GameObject kbIconInfo3;
 
 	// Start is called before the first frame update
 	void Start()
     {
-		GameObject.Find(kbIconInfo.name).GetComponent<SpriteRenderer>().enabled = false;
+		GameObject.Find(kbIconInfo3.name).GetComponent<SpriteRenderer>().enabled = false;
 		JoueurEstProche = false;
 	}
 
@@ -29,13 +29,13 @@ public class DetectPlayer2 : MonoBehaviour
 		//player potentialPlayer = collision.gameObject.GetComponent<player>();
 		//if (potentialPlayer == null)
 		//  return;
-		GameObject.Find(kbIconInfo.name).GetComponent<SpriteRenderer>().enabled = true;
+		GameObject.Find(kbIconInfo3.name).GetComponent<SpriteRenderer>().enabled = true;
 		JoueurEstProche = true;
 	}
 
 	private void OnTriggerExit2D(Collider2D collision)
 	{
-		GameObject.Find(kbIconInfo.name).GetComponent<SpriteRenderer>().enabled = false;
+		GameObject.Find(kbIconInfo3.name).GetComponent<SpriteRenderer>().enabled = false;
 		JoueurEstProche = false;
 	}
 }
