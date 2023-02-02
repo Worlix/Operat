@@ -26,6 +26,8 @@ public class troumur : MonoBehaviour
 		{
 			scotchaffiche = 1;
 			GameObject.Find("noscotch").GetComponent<SpriteRenderer>().enabled = false;
+			GetComponent<SpriteRenderer>().enabled = false;
+			GameObject.Find(kbIconInfo7.name).GetComponent<SpriteRenderer>().enabled = false;
 			Destroy(this.gameObject, 1);
 		} else if (Input.GetKeyDown(KeyCode.E) && JoueurEstProche){
 			GameObject.Find("noscotch").GetComponent<SpriteRenderer>().enabled = true;

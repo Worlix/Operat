@@ -30,6 +30,8 @@ public class remplaceampoule : MonoBehaviour
 			ampouleaffiche = 1;
 			GameObject.Find(ampoulechange.name).GetComponent<SpriteRenderer>().enabled = true;
 			GameObject.Find("noampoule").GetComponent<SpriteRenderer>().enabled = false;
+			GetComponent<SpriteRenderer>().enabled = false;
+			GameObject.Find(kbIconInfo1.name).GetComponent<SpriteRenderer>().enabled = false;
 			Destroy(this.gameObject,1);
 		} else if (Input.GetKeyDown(KeyCode.E) && JoueurEstProche1){
 			GameObject.Find("noampoule").GetComponent<SpriteRenderer>().enabled = true;

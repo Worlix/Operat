@@ -23,6 +23,9 @@ public class reparationtoilette : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.E) && JoueurEstProche1)
 		{
 			GameObject.Find(toilettechange.name).GetComponent<SpriteRenderer>().enabled = true;
+			GetComponent<SpriteRenderer>().enabled = false;
+			GameObject.Find(kbIconInfo1.name).GetComponent<SpriteRenderer>().enabled = false;
+
 			Destroy(this.gameObject,1);
 		}
 

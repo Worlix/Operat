@@ -19,6 +19,8 @@ public class DetectPlayer2 : MonoBehaviour
     {
 		if (Input.GetKeyDown(KeyCode.E) && JoueurEstProche)
 		{
+			GetComponent<SpriteRenderer>().enabled = false;
+			GameObject.Find(kbIconInfo3.name).GetComponent<SpriteRenderer>().enabled = false;
 			Destroy(this.gameObject, 1);
 		} 
 
