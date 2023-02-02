@@ -2,34 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class troumur : MonoBehaviour
+public class DetectPlayer2 : MonoBehaviour
 {
-	public bool JoueurEstProche;
+    public bool JoueurEstProche;
 	public GameObject kbIconInfo;
-	public bool scotchestla;
-	public int scotchaffiche;
 
 	// Start is called before the first frame update
 	void Start()
     {
 		GameObject.Find(kbIconInfo.name).GetComponent<SpriteRenderer>().enabled = false;
-		GameObject.Find("noscotch").GetComponent<SpriteRenderer>().enabled = false;
 		JoueurEstProche = false;
-		scotchaffiche = 0;
 	}
 
     // Update is called once per frame
     void Update()
     {
-		scotchestla = GameObject.Find("groupescotch").GetComponent<DetectPlayer>().scotchok;
-		if (Input.GetKeyDown(KeyCode.E) && JoueurEstProche && scotchestla)
+		if (Input.GetKeyDown(KeyCode.E) && JoueurEstProche)
 		{
-			scotchaffiche = 1;
-			GameObject.Find("noscotch").GetComponent<SpriteRenderer>().enabled = false;
 			Destroy(this.gameObject, 1);
-		} else if (Input.GetKeyDown(KeyCode.E) && JoueurEstProche){
-			GameObject.Find("noscotch").GetComponent<SpriteRenderer>().enabled = true;
-		}
+		} 
 
 	}
 
