@@ -16,8 +16,17 @@ public class TaskPointer : MonoBehaviour
     {
         myPointer = transform.Find("Pointer").gameObject;
         pointerRect = myPointer.GetComponent<RectTransform>();
-        targetPosition = target.transform.position;
         uiCamera = Camera.main;
+        if (target != null)
+        {
+            targetPosition = target.transform.position;
+        }
+    }
+
+    public void DefineTarget(GameObject cible)
+    {
+        target = cible;
+        targetPosition = target.transform.position;
     }
 
     // Update is called once per frame
